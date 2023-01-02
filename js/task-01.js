@@ -7,6 +7,23 @@
 елементів в категорії (усіх <li>, вкладених в нього).
 В результаті, в консолі будуть виведені наступні повідомлення. */
 
-const NumberOfCategories = document.querySelectorAll("ul#categories");
-// const test = NumberOfCategories.querySelectorAll(".item");
-console.log(NumberOfCategories);
+/*
+Number of categories: 3
+
+Category: Animals
+Elements: 4
+
+Category: Products
+Elements: 3
+
+Category: Technologies
+Elements: 5 */
+
+const NumberOfCategories = document.querySelector("ul#categories");
+console.log(`Number of categories: ${NumberOfCategories.children.length}`);
+
+[...NumberOfCategories.children].forEach(NumberOfCategories => {
+  console.dir(NumberOfCategories.children[0].textContent);
+  console.dir(NumberOfCategories.children[1].children.length);
+});
+
