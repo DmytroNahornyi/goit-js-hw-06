@@ -30,7 +30,7 @@ const images = [
 const imageGallery = document.querySelector(".gallery");
 
 const photoEl = images.map(({ url, alt }) =>
-  `<li><img src = '${url}' alt = '${alt}'width = 200 height = 150></li>`)
+  `<li><img src = '${url}' alt = '${alt}'width = 400></li>`)
   .join('');
 
   imageGallery.insertAdjacentHTML('beforeend', photoEl);
