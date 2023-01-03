@@ -28,13 +28,10 @@ const images = [
 ];
 
 const imageGallery = document.querySelector(".gallery");
-// let photoListEl = document.createElement("li");
-const photoEl = images.map(image => {
-  let addElements = imageGallery.insertAdjacentHTML(
-  'beforeend', 
-  `<li><img src=${image.url} alt='${image.alt}'width = 200 height = 150></li>`
-  );
-return addElements;
-});
 
-// console.log(addElements)
+const photoEl = images.map(({ url, alt }) =>
+  `<li><img src = '${url}' alt = '${alt}'width = 200 height = 150></li>`)
+  .join('');
+
+  imageGallery.insertAdjacentHTML('beforeend', photoEl);
+console.log(imageGallery)
